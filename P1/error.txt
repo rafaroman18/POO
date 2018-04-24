@@ -1,0 +1,139 @@
+In file included from cadena.cpp:1:0,
+                 from main.cpp:1:
+cadena.hpp: In function ‘std::istream& operator>>(std::istream&, Cadena&)’:
+cadena.hpp:52:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+In file included from main.cpp:1:0:
+cadena.cpp:3:23: error: expected primary-expression before ‘tam’
+ Cadena::Cadena(size_t tam,char s):s_(new char[tam+1]),tam_(tam)
+                       ^~~
+cadena.cpp:3:27: error: expected primary-expression before ‘char’
+ Cadena::Cadena(size_t tam,char s):s_(new char[tam+1]),tam_(tam)
+                           ^~~~
+cadena.cpp:3:33: error: cannot call constructor ‘Cadena::Cadena’ directly [-fpermissive]
+ Cadena::Cadena(size_t tam,char s):s_(new char[tam+1]),tam_(tam)
+                                 ^
+cadena.cpp:3:33: note: for a function-style cast, remove the redundant ‘::Cadena’
+cadena.cpp:12:16: error: expected primary-expression before ‘const’
+ Cadena::Cadena(const char* s):s_(new char [strlen(s)+1]),tam_(strlen(s))//Constructor mediante cadena
+                ^~~~~
+cadena.cpp:12:29: error: cannot call constructor ‘Cadena::Cadena’ directly [-fpermissive]
+ Cadena::Cadena(const char* s):s_(new char [strlen(s)+1]),tam_(strlen(s))//Constructor mediante cadena
+                             ^
+cadena.cpp:12:29: note: for a function-style cast, remove the redundant ‘::Cadena’
+cadena.cpp:17:16: error: expected primary-expression before ‘const’
+ Cadena::Cadena(const Cadena& A ):s_(new char[A.tam_+1]),tam_(A.tam_)//Constructor de copia
+                ^~~~~
+cadena.cpp:17:32: error: cannot call constructor ‘Cadena::Cadena’ directly [-fpermissive]
+ Cadena::Cadena(const Cadena& A ):s_(new char[A.tam_+1]),tam_(A.tam_)//Constructor de copia
+                                ^
+cadena.cpp:17:32: note: for a function-style cast, remove the redundant ‘::Cadena’
+cadena.cpp:22:16: error: expected primary-expression before ‘const’
+ Cadena::Cadena(const Cadena& A,size_t ind, size_t tam):s_(new char[tam+1]),tam_(tam)
+                ^~~~~
+cadena.cpp:22:39: error: expected primary-expression before ‘ind’
+ Cadena::Cadena(const Cadena& A,size_t ind, size_t tam):s_(new char[tam+1]),tam_(tam)
+                                       ^~~
+cadena.cpp:22:51: error: expected primary-expression before ‘tam’
+ Cadena::Cadena(const Cadena& A,size_t ind, size_t tam):s_(new char[tam+1]),tam_(tam)
+                                                   ^~~
+cadena.cpp:22:54: error: cannot call constructor ‘Cadena::Cadena’ directly [-fpermissive]
+ Cadena::Cadena(const Cadena& A,size_t ind, size_t tam):s_(new char[tam+1]),tam_(tam)
+                                                      ^
+cadena.cpp:22:54: note: for a function-style cast, remove the redundant ‘::Cadena’
+cadena.cpp:32:22: error: expected primary-expression before ‘&&’ token
+ Cadena::Cadena(Cadena&& A):s_(new char[A.tam_+1]),tam_(A.tam_) //Constructor de movimiento
+                      ^~
+cadena.cpp:32:26: error: cannot call constructor ‘Cadena::Cadena’ directly [-fpermissive]
+ Cadena::Cadena(Cadena&& A):s_(new char[A.tam_+1]),tam_(A.tam_) //Constructor de movimiento
+                          ^
+cadena.cpp:32:26: note: for a function-style cast, remove the redundant ‘::Cadena’
+cadena.cpp:38:26: error: qualified-id in declaration before ‘(’ token
+ Cadena& Cadena::operator=(Cadena&& A)
+                          ^
+cadena.cpp:38:33: error: expected primary-expression before ‘&&’ token
+ Cadena& Cadena::operator=(Cadena&& A)
+                                 ^~
+cadena.cpp:51:17: error: no matching function for call to ‘Cadena::Cadena()’
+ Cadena::~Cadena()
+                 ^
+In file included from cadena.cpp:1:0,
+                 from main.cpp:1:
+cadena.hpp:26:3: note: candidate: Cadena::~Cadena()
+   ~Cadena();
+   ^
+cadena.hpp:26:3: note:   candidate expects 1 argument, 0 provided
+In file included from main.cpp:1:0:
+cadena.cpp:56:29: error: qualified-id in declaration before ‘(’ token
+ inline size_t Cadena::length() const noexcept  //Devuelve el tamaño de la cadena
+                             ^
+cadena.cpp:61:33: error: qualified-id in declaration before ‘(’ token
+ inline const char* Cadena::c_str()const noexcept  //Conversión a cadena de bajo nivel(puts)
+                                 ^
+cadena.cpp:66:28: error: qualified-id in declaration before ‘(’ token
+ Cadena& Cadena::operator +=(const Cadena& e)
+                            ^
+cadena.cpp:66:29: error: expected primary-expression before ‘const’
+ Cadena& Cadena::operator +=(const Cadena& e)
+                             ^~~~~
+cadena.cpp:79:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+cadena.cpp:83:28: error: qualified-id in declaration before ‘(’ token
+ Cadena& Cadena::operator = (const Cadena& A)   //Operador de asignación
+                            ^
+cadena.cpp:83:29: error: expected primary-expression before ‘const’
+ Cadena& Cadena::operator = (const Cadena& A)   //Operador de asignación
+                             ^~~~~
+cadena.cpp:95:27: error: qualified-id in declaration before ‘(’ token
+ Cadena& Cadena::operator =(const char* s) //Operado de asignación
+                           ^
+cadena.cpp:95:28: error: expected primary-expression before ‘const’
+ Cadena& Cadena::operator =(const char* s) //Operado de asignación
+                            ^~~~~
+cadena.cpp:104:16: error: qualified-id in declaration before ‘(’ token
+ char Cadena::at(size_t n)const
+                ^
+cadena.cpp:110:17: error: qualified-id in declaration before ‘(’ token
+ char& Cadena::at(size_t n)
+                 ^
+cadena.cpp:110:25: error: expected primary-expression before ‘n’
+ char& Cadena::at(size_t n)
+                         ^
+cadena.cpp:116:32: error: qualified-id in declaration before ‘(’ token
+ inline char Cadena::operator[] (size_t n)const noexcept //MIRAR ESTE MISMO OPERADOR PERO CON CADENA&
+                                ^
+cadena.cpp:121:26: error: qualified-id in declaration before ‘(’ token
+ char& Cadena::operator[] (size_t n) noexcept
+                          ^
+cadena.cpp:121:34: error: expected primary-expression before ‘n’
+ char& Cadena::operator[] (size_t n) noexcept
+                                  ^
+cadena.cpp:125:22: error: qualified-id in declaration before ‘(’ token
+ Cadena Cadena::substr(size_t ind,size_t tam)const
+                      ^
+cadena.cpp:132:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+cadena.cpp:137:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+cadena.cpp:142:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+cadena.cpp:147:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+cadena.cpp:152:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+cadena.cpp:157:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+main.cpp:4:1: error: a function-definition is not allowed here before ‘{’ token
+ {
+ ^
+main.cpp:14:1: error: expected ‘}’ at end of input
+ }
+ ^

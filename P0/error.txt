@@ -1,0 +1,132 @@
+../Tests-auto/test-caso0-cadena-auto.cpp: In function ‘void test_cadena(fctkern_t*)’:
+../Tests-auto/test-caso0-cadena-auto.cpp:62:24: error: ‘npos’ is not a member of ‘Cadena’
+       c(a, 16, Cadena::npos),         // ¿Existe npos público?
+                        ^~~~
+../Tests-auto/test-caso0-cadena-auto.cpp:63:13: error: invalid user-defined conversion from ‘const Cadena’ to ‘size_t {aka long unsigned int}’ [-fpermissive]
+       d(a, 0),           // 2 parámetros [npos]
+             ^
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:17:3: note: candidate is: Cadena::operator const char*() const <near match>
+   operator const char*()const noexcept;
+   ^~~~~~~~
+./cadena.hpp:17:3: note:   no known conversion from ‘const char*’ to ‘size_t {aka long unsigned int}’
+./cadena.hpp:8:12: note:   initializing argument 1 of ‘Cadena::Cadena(size_t, char)’
+   explicit Cadena(size_t tam=0,char s=' ');
+            ^~~~~~
+../Tests-auto/test-caso0-cadena-auto.cpp:99:66: error: invalid conversion from ‘const char*’ to ‘size_t {aka long unsigned int}’ [-fpermissive]
+     const Cadena a("No te digo trigo por no llamarte Rodrigo", 16);
+                                                                  ^
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:8:12: note:   initializing argument 1 of ‘Cadena::Cadena(size_t, char)’
+   explicit Cadena(size_t tam=0,char s=' ');
+            ^~~~~~
+../Tests-auto/test-caso0-cadena-auto.cpp:100:34: error: invalid conversion from ‘const char*’ to ‘size_t {aka long unsigned int}’ [-fpermissive]
+     const Cadena b("Apetekawn", 0); // vacía
+                                  ^
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:8:12: note:   initializing argument 1 of ‘Cadena::Cadena(size_t, char)’
+   explicit Cadena(size_t tam=0,char s=' ');
+            ^~~~~~
+../Tests-auto/test-caso0-cadena-auto.cpp:101:48: error: invalid conversion from ‘const char*’ to ‘size_t {aka long unsigned int}’ [-fpermissive]
+     const Cadena c("Mary had a little lamb", 30); // entera
+                                                ^
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:8:12: note:   initializing argument 1 of ‘Cadena::Cadena(size_t, char)’
+   explicit Cadena(size_t tam=0,char s=' ');
+            ^~~~~~
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+../Tests-auto/test-caso0-cadena-auto.cpp:310:33: error: passing ‘const Cadena’ as ‘this’ argument discards qualifiers [-fpermissive]
+     fct_chk_eq_str(a.substr(6, 6).c_str(), "meenie");
+                                 ^
+../Tests-auto/fct.h:3688:25: note: in definition of macro ‘fct_chk_eq_str’
+     fct_xchk(fctstr_eq((V1), (V2)),\
+                         ^~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:12:10: note:   in call to ‘Cadena Cadena::substr(size_t, size_t)’
+   Cadena substr(size_t ind,size_t tam);
+          ^~~~~~
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+../Tests-auto/test-caso0-cadena-auto.cpp:310:33: error: passing ‘const Cadena’ as ‘this’ argument discards qualifiers [-fpermissive]
+     fct_chk_eq_str(a.substr(6, 6).c_str(), "meenie");
+                                 ^
+../Tests-auto/fct.h:3690:12: note: in definition of macro ‘fct_chk_eq_str’
+           (V1),\
+            ^~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:12:10: note:   in call to ‘Cadena Cadena::substr(size_t, size_t)’
+   Cadena substr(size_t ind,size_t tam);
+          ^~~~~~
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+../Tests-auto/test-caso0-cadena-auto.cpp:316:45: error: passing ‘const Cadena’ as ‘this’ argument discards qualifiers [-fpermissive]
+     fct_chk_ex(out_of_range, a.substr(10, 10));
+                                             ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:12:10: note:   in call to ‘Cadena Cadena::substr(size_t, size_t)’
+   Cadena substr(size_t ind,size_t tam);
+          ^~~~~~
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+../Tests-auto/test-caso0-cadena-auto.cpp:322:45: error: passing ‘const Cadena’ as ‘this’ argument discards qualifiers [-fpermissive]
+     fct_chk_ex(out_of_range, a.substr(-1, 10));
+                                             ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:12:10: note:   in call to ‘Cadena Cadena::substr(size_t, size_t)’
+   Cadena substr(size_t ind,size_t tam);
+          ^~~~~~
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+../Tests-auto/test-caso0-cadena-auto.cpp:328:43: error: passing ‘const Cadena’ as ‘this’ argument discards qualifiers [-fpermissive]
+     fct_chk_ex(out_of_range, a.substr(9, 2));
+                                           ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:12:10: note:   in call to ‘Cadena Cadena::substr(size_t, size_t)’
+   Cadena substr(size_t ind,size_t tam);
+          ^~~~~~
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+../Tests-auto/test-caso0-cadena-auto.cpp:334:44: error: passing ‘const Cadena’ as ‘this’ argument discards qualifiers [-fpermissive]
+     fct_chk_ex(out_of_range, a.substr(9, -1));
+                                            ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:12:10: note:   in call to ‘Cadena Cadena::substr(size_t, size_t)’
+   Cadena substr(size_t ind,size_t tam);
+          ^~~~~~
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+../Tests-auto/test-caso0-cadena-auto.cpp:340:46: error: passing ‘const Cadena’ as ‘this’ argument discards qualifiers [-fpermissive]
+     fct_chk_ex(out_of_range, a.substr(9, 1000));
+                                              ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-cadena-auto.cpp:8:
+./cadena.hpp:12:10: note:   in call to ‘Cadena Cadena::substr(size_t, size_t)’
+   Cadena substr(size_t ind,size_t tam);
+          ^~~~~~
+make: *** [test-caso0-cadena-auto.o] Error 1

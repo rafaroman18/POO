@@ -1,0 +1,2 @@
+c++ -c -std=c++11 -g -pedantic -Wall test-P0-consola.cpp -o test-P0-consola.o
+makefile:31: fallo en las instrucciones para el objetivo 'test-P0-consola.o'

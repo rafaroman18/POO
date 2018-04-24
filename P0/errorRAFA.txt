@@ -1,0 +1,1048 @@
+../Tests-auto/test-caso0-fecha-auto.cpp: In function ‘void test_fecha(fctkern_t*)’:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:23: error: no match for ‘operator+’ (operand types are ‘const Fecha’ and ‘int’)
+       const Fecha g(f + 10);
+                     ~~^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:18:9: note: candidate: Fecha Fecha::operator+(int) <near match>
+   Fecha operator + (int );
+         ^~~~~~~~
+./fecha.hpp:18:9: note:   passing ‘const Fecha*’ as ‘this’ argument discards qualifiers
+../Tests-auto/test-caso0-fecha-auto.cpp:325:23: note: candidate: operator+(const char*, long int) <built-in>
+       const Fecha g(f + 10);
+                     ~~^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:325:23: note:   conversion of argument 1 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       const Fecha g(f + 10);
+                         ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./cadena.hpp:31:8: note: candidate: Cadena operator+(const Cadena&, const Cadena&)
+ Cadena operator +(const Cadena& g, const Cadena& e);
+        ^~~~~~~~
+./cadena.hpp:31:8: note:   no known conversion for argument 1 from ‘const Fecha’ to ‘const Cadena&’
+In file included from /usr/include/c++/7/vector:65:0,
+                 from /usr/include/c++/7/regex:51,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_bvector.h:387:3: note: candidate: std::_Bit_const_iterator std::operator+(std::ptrdiff_t, const std::_Bit_const_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_const_iterator& __x)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:387:3: note:   no known conversion for argument 2 from ‘int’ to ‘const std::_Bit_const_iterator&’
+/usr/include/c++/7/bits/stl_bvector.h:297:3: note: candidate: std::_Bit_iterator std::operator+(std::ptrdiff_t, const std::_Bit_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_iterator& __x)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:297:3: note:   no known conversion for argument 2 from ‘int’ to ‘const std::_Bit_iterator&’
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:374:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> std::_Deque_iterator<_Tp, _Ref, _Ptr> std::operator+(std::ptrdiff_t, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator+(ptrdiff_t __n, const _Deque_iterator<_Tp, _Ref, _Ptr>& __x)
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:374:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   mismatched types ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’ and ‘int’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5983:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5983:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Fecha’ have incompatible cv-qualifiers
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5977:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5977:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Fecha’ have incompatible cv-qualifiers
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5971:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5971:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   mismatched types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5965:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5965:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   mismatched types ‘const _CharT*’ and ‘Fecha’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5953:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5953:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Fecha’ have incompatible cv-qualifiers
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5947:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5947:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   ‘const Fecha’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5941:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5941:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Fecha’ have incompatible cv-qualifiers
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5929:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5929:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   ‘const Fecha’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5913:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5913:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   ‘const Fecha’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:53:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.tcc:1173:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.tcc:1173:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:53:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.tcc:1157:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.tcc:1157:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   mismatched types ‘const _CharT*’ and ‘Fecha’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5876:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5876:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   ‘const Fecha’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:1198:5: note: candidate: template<class _Iterator> std::move_iterator<_IteratorL> std::operator+(typename std::move_iterator<_IteratorL>::difference_type, const std::move_iterator<_IteratorL>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1198:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   mismatched types ‘const std::move_iterator<_IteratorL>’ and ‘int’
+       const Fecha g(f + 10);
+                         ^~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:397:5: note: candidate: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:397:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:325:25: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+       const Fecha g(f + 10);
+                         ^~
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:6: error: no match for ‘operator+’ (operand types are ‘const Fecha’ and ‘int’)
+    f + 7);
+    ~~^~~
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:18:9: note: candidate: Fecha Fecha::operator+(int) <near match>
+   Fecha operator + (int );
+         ^~~~~~~~
+./fecha.hpp:18:9: note:   passing ‘const Fecha*’ as ‘this’ argument discards qualifiers
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:6: note: candidate: operator+(const char*, long int) <built-in>
+    f + 7);
+    ~~^~~
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:332:6: note:   conversion of argument 1 would be ill-formed:
+    f + 7);
+    ~~^~~
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+In file included from ../Tests-auto/test-auto.hpp:47:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./cadena.hpp:31:8: note: candidate: Cadena operator+(const Cadena&, const Cadena&)
+ Cadena operator +(const Cadena& g, const Cadena& e);
+        ^~~~~~~~
+./cadena.hpp:31:8: note:   no known conversion for argument 1 from ‘const Fecha’ to ‘const Cadena&’
+In file included from /usr/include/c++/7/vector:65:0,
+                 from /usr/include/c++/7/regex:51,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_bvector.h:387:3: note: candidate: std::_Bit_const_iterator std::operator+(std::ptrdiff_t, const std::_Bit_const_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_const_iterator& __x)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:387:3: note:   no known conversion for argument 2 from ‘int’ to ‘const std::_Bit_const_iterator&’
+/usr/include/c++/7/bits/stl_bvector.h:297:3: note: candidate: std::_Bit_iterator std::operator+(std::ptrdiff_t, const std::_Bit_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_iterator& __x)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:297:3: note:   no known conversion for argument 2 from ‘int’ to ‘const std::_Bit_iterator&’
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:374:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> std::_Deque_iterator<_Tp, _Ref, _Ptr> std::operator+(std::ptrdiff_t, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator+(ptrdiff_t __n, const _Deque_iterator<_Tp, _Ref, _Ptr>& __x)
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:374:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   mismatched types ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’ and ‘int’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5983:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5983:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Fecha’ have incompatible cv-qualifiers
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5977:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5977:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Fecha’ have incompatible cv-qualifiers
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5971:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5971:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   mismatched types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5965:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5965:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   mismatched types ‘const _CharT*’ and ‘Fecha’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5953:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5953:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Fecha’ have incompatible cv-qualifiers
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5947:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5947:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   ‘const Fecha’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5941:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5941:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Fecha’ have incompatible cv-qualifiers
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5929:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5929:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   ‘const Fecha’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5913:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5913:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   ‘const Fecha’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:53:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.tcc:1173:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.tcc:1173:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘int’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:53:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.tcc:1157:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.tcc:1157:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   mismatched types ‘const _CharT*’ and ‘Fecha’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/basic_string.h:5876:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:5876:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   ‘const Fecha’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:1198:5: note: candidate: template<class _Iterator> std::move_iterator<_IteratorL> std::operator+(typename std::move_iterator<_IteratorL>::difference_type, const std::move_iterator<_IteratorL>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1198:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   mismatched types ‘const std::move_iterator<_IteratorL>’ and ‘int’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:397:5: note: candidate: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:397:5: note:   template argument deduction/substitution failed:
+In file included from ../Tests-auto/test-auto.hpp:44:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+../Tests-auto/test-caso0-fecha-auto.cpp:332:8: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘int’
+    f + 7);
+        ^
+../Tests-auto/fct.h:3837:11: note: in definition of macro ‘fct_chk_ex’
+           CODE;                       \
+           ^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:338:23: error: no match for ‘operator-’ (operand types are ‘const Fecha’ and ‘int’)
+       const Fecha g(f - 10);
+                     ~~^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:19:9: note: candidate: Fecha Fecha::operator-(int) <near match>
+   Fecha operator -(int );
+         ^~~~~~~~
+./fecha.hpp:19:9: note:   passing ‘const Fecha*’ as ‘this’ argument discards qualifiers
+../Tests-auto/test-caso0-fecha-auto.cpp:338:23: note: candidate: operator-(const char*, long int) <built-in>
+       const Fecha g(f - 10);
+                     ~~^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:338:23: note:   conversion of argument 1 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:338:25: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       const Fecha g(f - 10);
+                         ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator-(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:338:25: note:   ‘const Fecha’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       const Fecha g(f - 10);
+                         ^~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator-(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:338:25: note:   ‘const Fecha’ is not derived from ‘const std::move_iterator<_IteratorL>’
+       const Fecha g(f - 10);
+                         ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:351:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator-(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:351:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:338:25: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       const Fecha g(f - 10);
+                         ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:363:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator-(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:363:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:338:25: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       const Fecha g(f - 10);
+                         ^~
+In file included from /usr/include/c++/7/vector:65:0,
+                 from /usr/include/c++/7/regex:51,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note: candidate: std::ptrdiff_t std::operator-(const std::_Bit_iterator_base&, const std::_Bit_iterator_base&)
+   operator-(const _Bit_iterator_base& __x, const _Bit_iterator_base& __y)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note:   no known conversion for argument 1 from ‘const Fecha’ to ‘const std::_Bit_iterator_base&’
+../Tests-auto/test-caso0-fecha-auto.cpp:426:23: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       const char* s = f;
+                       ^
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:437:11: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       s = g;
+           ^
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:556:24: error: no match for ‘operator-’ (operand types are ‘const Fecha’ and ‘const Fecha’)
+       long int d1 = f1 - f2;
+                     ~~~^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:19:9: note: candidate: Fecha Fecha::operator-(int) <near match>
+   Fecha operator -(int );
+         ^~~~~~~~
+./fecha.hpp:19:9: note:   conversion of argument 1 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:556:26: error: invalid user-defined conversion from ‘const Fecha’ to ‘int’ [-fpermissive]
+       long int d1 = f1 - f2;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note: candidate is: Fecha::operator const char*() <near match>
+   operator const char*();
+   ^~~~~~~~
+./fecha.hpp:24:3: note:   passing ‘const Fecha*’ as ‘this’ argument discards qualifiers
+../Tests-auto/test-caso0-fecha-auto.cpp:556:26: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d1 = f1 - f2;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:556:24: note: candidate: operator-(const char*, const char*) <built-in>
+       long int d1 = f1 - f2;
+                     ~~~^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:556:24: note:   conversion of argument 2 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:556:26: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d1 = f1 - f2;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator-(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:556:26: note:   ‘const Fecha’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       long int d1 = f1 - f2;
+                          ^~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator-(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:556:26: note:   ‘const Fecha’ is not derived from ‘const std::move_iterator<_IteratorL>’
+       long int d1 = f1 - f2;
+                          ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:351:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator-(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:351:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:556:26: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d1 = f1 - f2;
+                          ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:363:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator-(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:363:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:556:26: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d1 = f1 - f2;
+                          ^~
+In file included from /usr/include/c++/7/vector:65:0,
+                 from /usr/include/c++/7/regex:51,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note: candidate: std::ptrdiff_t std::operator-(const std::_Bit_iterator_base&, const std::_Bit_iterator_base&)
+   operator-(const _Bit_iterator_base& __x, const _Bit_iterator_base& __y)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note:   no known conversion for argument 1 from ‘const Fecha’ to ‘const std::_Bit_iterator_base&’
+../Tests-auto/test-caso0-fecha-auto.cpp:557:24: error: no match for ‘operator-’ (operand types are ‘const Fecha’ and ‘const Fecha’)
+       long int d2 = f2 - f1;
+                     ~~~^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:19:9: note: candidate: Fecha Fecha::operator-(int) <near match>
+   Fecha operator -(int );
+         ^~~~~~~~
+./fecha.hpp:19:9: note:   conversion of argument 1 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:557:26: error: invalid user-defined conversion from ‘const Fecha’ to ‘int’ [-fpermissive]
+       long int d2 = f2 - f1;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note: candidate is: Fecha::operator const char*() <near match>
+   operator const char*();
+   ^~~~~~~~
+./fecha.hpp:24:3: note:   passing ‘const Fecha*’ as ‘this’ argument discards qualifiers
+../Tests-auto/test-caso0-fecha-auto.cpp:557:26: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d2 = f2 - f1;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:557:24: note: candidate: operator-(const char*, const char*) <built-in>
+       long int d2 = f2 - f1;
+                     ~~~^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:557:24: note:   conversion of argument 2 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:557:26: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d2 = f2 - f1;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator-(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:557:26: note:   ‘const Fecha’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       long int d2 = f2 - f1;
+                          ^~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator-(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:557:26: note:   ‘const Fecha’ is not derived from ‘const std::move_iterator<_IteratorL>’
+       long int d2 = f2 - f1;
+                          ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:351:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator-(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:351:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:557:26: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d2 = f2 - f1;
+                          ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:363:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator-(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:363:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:557:26: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d2 = f2 - f1;
+                          ^~
+In file included from /usr/include/c++/7/vector:65:0,
+                 from /usr/include/c++/7/regex:51,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note: candidate: std::ptrdiff_t std::operator-(const std::_Bit_iterator_base&, const std::_Bit_iterator_base&)
+   operator-(const _Bit_iterator_base& __x, const _Bit_iterator_base& __y)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note:   no known conversion for argument 1 from ‘const Fecha’ to ‘const std::_Bit_iterator_base&’
+../Tests-auto/test-caso0-fecha-auto.cpp:565:24: error: no match for ‘operator-’ (operand types are ‘const Fecha’ and ‘const Fecha’)
+       long int d1 = f1 - f2;
+                     ~~~^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:19:9: note: candidate: Fecha Fecha::operator-(int) <near match>
+   Fecha operator -(int );
+         ^~~~~~~~
+./fecha.hpp:19:9: note:   conversion of argument 1 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:565:26: error: invalid user-defined conversion from ‘const Fecha’ to ‘int’ [-fpermissive]
+       long int d1 = f1 - f2;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note: candidate is: Fecha::operator const char*() <near match>
+   operator const char*();
+   ^~~~~~~~
+./fecha.hpp:24:3: note:   passing ‘const Fecha*’ as ‘this’ argument discards qualifiers
+../Tests-auto/test-caso0-fecha-auto.cpp:565:26: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d1 = f1 - f2;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:565:24: note: candidate: operator-(const char*, const char*) <built-in>
+       long int d1 = f1 - f2;
+                     ~~~^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:565:24: note:   conversion of argument 2 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:565:26: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d1 = f1 - f2;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator-(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:565:26: note:   ‘const Fecha’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       long int d1 = f1 - f2;
+                          ^~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator-(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:565:26: note:   ‘const Fecha’ is not derived from ‘const std::move_iterator<_IteratorL>’
+       long int d1 = f1 - f2;
+                          ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:351:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator-(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:351:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:565:26: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d1 = f1 - f2;
+                          ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:363:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator-(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:363:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:565:26: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d1 = f1 - f2;
+                          ^~
+In file included from /usr/include/c++/7/vector:65:0,
+                 from /usr/include/c++/7/regex:51,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note: candidate: std::ptrdiff_t std::operator-(const std::_Bit_iterator_base&, const std::_Bit_iterator_base&)
+   operator-(const _Bit_iterator_base& __x, const _Bit_iterator_base& __y)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note:   no known conversion for argument 1 from ‘const Fecha’ to ‘const std::_Bit_iterator_base&’
+../Tests-auto/test-caso0-fecha-auto.cpp:566:24: error: no match for ‘operator-’ (operand types are ‘const Fecha’ and ‘const Fecha’)
+       long int d2 = f2 - f1;
+                     ~~~^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:19:9: note: candidate: Fecha Fecha::operator-(int) <near match>
+   Fecha operator -(int );
+         ^~~~~~~~
+./fecha.hpp:19:9: note:   conversion of argument 1 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:566:26: error: invalid user-defined conversion from ‘const Fecha’ to ‘int’ [-fpermissive]
+       long int d2 = f2 - f1;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note: candidate is: Fecha::operator const char*() <near match>
+   operator const char*();
+   ^~~~~~~~
+./fecha.hpp:24:3: note:   passing ‘const Fecha*’ as ‘this’ argument discards qualifiers
+../Tests-auto/test-caso0-fecha-auto.cpp:566:26: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d2 = f2 - f1;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:566:24: note: candidate: operator-(const char*, const char*) <built-in>
+       long int d2 = f2 - f1;
+                     ~~~^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:566:24: note:   conversion of argument 2 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:566:26: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d2 = f2 - f1;
+                          ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator-(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:566:26: note:   ‘const Fecha’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       long int d2 = f2 - f1;
+                          ^~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator-(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:566:26: note:   ‘const Fecha’ is not derived from ‘const std::move_iterator<_IteratorL>’
+       long int d2 = f2 - f1;
+                          ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:351:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator-(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:351:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:566:26: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d2 = f2 - f1;
+                          ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:363:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator-(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:363:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:566:26: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d2 = f2 - f1;
+                          ^~
+In file included from /usr/include/c++/7/vector:65:0,
+                 from /usr/include/c++/7/regex:51,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note: candidate: std::ptrdiff_t std::operator-(const std::_Bit_iterator_base&, const std::_Bit_iterator_base&)
+   operator-(const _Bit_iterator_base& __x, const _Bit_iterator_base& __y)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note:   no known conversion for argument 1 from ‘const Fecha’ to ‘const std::_Bit_iterator_base&’
+../Tests-auto/test-caso0-fecha-auto.cpp:576:23: error: no match for ‘operator-’ (operand types are ‘const Fecha’ and ‘const Fecha’)
+       long int d = f1 - f2;
+                    ~~~^~~~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:19:9: note: candidate: Fecha Fecha::operator-(int) <near match>
+   Fecha operator -(int );
+         ^~~~~~~~
+./fecha.hpp:19:9: note:   conversion of argument 1 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:576:25: error: invalid user-defined conversion from ‘const Fecha’ to ‘int’ [-fpermissive]
+       long int d = f1 - f2;
+                         ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note: candidate is: Fecha::operator const char*() <near match>
+   operator const char*();
+   ^~~~~~~~
+./fecha.hpp:24:3: note:   passing ‘const Fecha*’ as ‘this’ argument discards qualifiers
+../Tests-auto/test-caso0-fecha-auto.cpp:576:25: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d = f1 - f2;
+                         ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:576:23: note: candidate: operator-(const char*, const char*) <built-in>
+       long int d = f1 - f2;
+                    ~~~^~~~
+../Tests-auto/test-caso0-fecha-auto.cpp:576:23: note:   conversion of argument 2 would be ill-formed:
+../Tests-auto/test-caso0-fecha-auto.cpp:576:25: error: passing ‘const Fecha’ as ‘this’ argument discards qualifiers [-fpermissive]
+       long int d = f1 - f2;
+                         ^~
+In file included from ../Tests-auto/test-auto.hpp:46:0,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+./fecha.hpp:24:3: note:   in call to ‘Fecha::operator const char*()’
+   operator const char*();
+   ^~~~~~~~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator-(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:389:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:576:25: note:   ‘const Fecha’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       long int d = f1 - f2;
+                         ^~
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/string:40,
+                 from ../Tests-auto/test-auto.hpp:21,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note: candidate: template<class _IteratorL, class _IteratorR> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator-(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1191:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:576:25: note:   ‘const Fecha’ is not derived from ‘const std::move_iterator<_IteratorL>’
+       long int d = f1 - f2;
+                         ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:351:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator-(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:351:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:576:25: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d = f1 - f2;
+                         ^~
+In file included from /usr/include/c++/7/deque:64:0,
+                 from /usr/include/c++/7/stack:60,
+                 from /usr/include/c++/7/regex:47,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_deque.h:363:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> typename std::_Deque_iterator<_Tp, _Ref, _Ptr>::difference_type std::operator-(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator-(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_deque.h:363:5: note:   template argument deduction/substitution failed:
+../Tests-auto/test-caso0-fecha-auto.cpp:576:25: note:   ‘const Fecha’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+       long int d = f1 - f2;
+                         ^~
+In file included from /usr/include/c++/7/vector:65:0,
+                 from /usr/include/c++/7/regex:51,
+                 from ../Tests-auto/test-auto.hpp:39,
+                 from ../Tests-auto/test-caso0-fecha-auto.cpp:9:
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note: candidate: std::ptrdiff_t std::operator-(const std::_Bit_iterator_base&, const std::_Bit_iterator_base&)
+   operator-(const _Bit_iterator_base& __x, const _Bit_iterator_base& __y)
+   ^~~~~~~~
+/usr/include/c++/7/bits/stl_bvector.h:208:3: note:   no known conversion for argument 1 from ‘const Fecha’ to ‘const std::_Bit_iterator_base&’
+make: *** [test-caso0-fecha-auto.o] Error 1
