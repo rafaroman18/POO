@@ -22,10 +22,5 @@ double pre;
 unsigned sto;
 };
 
-std::ostream& operator << (std::ostream& os,Articulo& A)
-{
-  os<<"[ "<<A.referencia()<<"] \""<<A.titulo()<<"\", "<<A.f_publi().anno()<<". "
-  <<std::setprecision(2)<<A.precio()<< "\u20AC"<<std::endl;
-  return os;
-}
+std::ostream& operator << (std::ostream& os,Articulo& A);
 #endif
