@@ -7,26 +7,17 @@ extern "C"{
 #include <random>
 #include "usuario.hpp"
 
-/*class SNA
-{
-  public:  //Semilla de SRAND
-  SNA(){std::srand(std::time(NULL)); }
-}sna;*/
-
 //CLAVE
 Clave::Clave(const char* contrasenna)
 {
 if(std::strlen(contrasenna)<5) throw Incorrecta(CORTA);
-
 static const char *const cv="abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXY0123456789./";
-static const std::size_t longtd = sizeof(cv) -1;
-
 std::random_device rng;
-std::uniform_int_distribution<size_t> dist(0,longtd);
+std::uniform_int_distribution<std::size_t> dist(0,63);
 const char salt[]={cv[dist(rng)],cv[dist(rng)]};
 const char* const ptr=crypt(contrasenna,salt);
 if(!ptr) throw Incorrecta(ERROR_CRYPT);
-password = contrasenna;
+password = ptr;
 }
 
 inline const Cadena& Clave::clave() const
@@ -37,8 +28,8 @@ inline const Cadena& Clave::clave() const
 bool Clave::verifica(const char* ppassword) const
 {
   const char*const pcc=crypt(ppassword,password.c_str());
-  if(!pcc)throw Incorrecta(ERROR_CRYPT);
-  return password==ppassword;
+  if(!pcc) throw Incorrecta(ERROR_CRYPT);
+  return password==pcc;
 }
 
 Usuario::Usuarios Usuario::usuario_;
@@ -63,24 +54,24 @@ void Usuario::no_es_titular_de(Tarjeta& tarjeta)
 
 std::ostream& operator<<(std::ostream& os,const Usuario& U)
 {
-  os<<U.id()<<" "<<"["<<U.pass_.clave()<<"]"<<" "<<U.nombre()<<" "<<U.apellidos()
-  <<std::endl<<U.direccion()
+  os<<U.id_<<" "<<"["<<U.pass_.clave()<<"]"<<" "<<U.nomb_<<" "<<U.apell_
+  <<std::endl<<U.dir_
   <<std::endl<<"Tarjetas:"<<std::endl;
   for(Usuario::Tarjetas::const_iterator i=U.tarjetas_.begin();i!=U.tarjetas_.end();i++)
   {
-    os<<(i->second)<<std::endl;
+    os<<(*i->second)<<std::endl;
   };
   return os;
 }
 
 std::ostream& mostrar_carro(std::ostream& os,const Usuario& usr)
 {
-os<<"Carrito de la compra de "<<usr.id()<<" "<<"["<<"Articulos: "<<usr.n_articulos()<<"]"<<std::endl;
-os<<" "<<"Cant."<<" "<<"Articulo"<<std::endl;
-os<<"=============================================================================="<<std::endl;
+os<<"Carrito de la compra de "<<usr.id()<<" "<<"["<<"Artículos: "<<usr.n_articulos()<<"]"<<std::endl;
+os<<" "<<"Cant."<<" "<<"Artículo"<<std::endl;
+os<<"============================================================"<<std::endl;
 for(Usuario::Articulos::const_iterator i=usr.compra().begin();i!=usr.compra().end();i++)
 {
-os<<"  "<<i->second<<"  "<<i->first;
+os<<"  "<<(i->second)<<"  "<<(*i->first)<<std::endl;
 }
 return os;
 }

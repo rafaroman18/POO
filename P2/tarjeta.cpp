@@ -2,20 +2,23 @@
 #include <cctype>
 #include <iomanip>
 #include <algorithm>
-
-#define REMOVE std::remove_if(num.begin(),num.end(),[](unsigned char x){return std::isspace(x);})
-#define COUNT std::count_if(num.begin(), num.end(), static_cast<int(*)(int)>(std::isdigit))
 bool luhn(const Cadena& numero);
 
 //NUMERO
 Numero::Numero(Cadena num)
 {
-  if (num.length() == 0) throw Incorrecto(LONGITUD);
-   num = num.substr(0,REMOVE - num.begin());
-   if(COUNT != num.length()) throw Incorrecto(DIGITOS);
-   if(num.length()< 13 || num.length() > 19) throw Incorrecto(LONGITUD);
-   if(!luhn(num))throw Incorrecto(NO_VALIDO);
- number = num;
+  Cadena tmp;
+  for(Cadena::iterator i=num.begin();i!=num.end();i++)
+  {
+    if(!std::isspace(*i))
+    {
+      if(!std::isdigit(*i)) throw Incorrecto(DIGITOS);
+      tmp+=Cadena(1,*i);
+    }
+  }
+  if(tmp.length()< 13 || tmp.length() > 19) throw Incorrecto(LONGITUD);
+  if(!luhn(tmp))throw Incorrecto(NO_VALIDO);
+  number = tmp;
 }
 
 bool operator<(const Numero& A,const Numero& B)noexcept
@@ -27,7 +30,7 @@ return strcmp(A,B)<0;
 //TARJETA
 Tarjeta::Tarjeta(Tipo tipo,const Numero& numero,Usuario& titular,const Fecha& caduc):tipo_(tipo),numero_(numero),titular_(&titular),caduc_(caduc),titular_f(titular.nombre()+" "+titular.apellidos())
 {
-if(caduc<Fecha()) throw Caducada(caduc);
+if(caduc<=Fecha()) throw Caducada(caduc);
  titular.es_titular_de(*this);
 }
 
