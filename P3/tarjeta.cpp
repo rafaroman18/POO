@@ -13,19 +13,6 @@ Numero::Numero(Cadena num)
   if(std::find_if(num.begin(),num.end(),std::not1(EsDigito()))) throw Incorrecto(DIGITOS);
   if(!luhn(num))throw Incorrecto(NO_VALIDO);
   number = num;
-  /*      **P2**
-  Cadena tmp;
-  for(Cadena::iterator i=num.begin();i!=num.end();i++)
-  {
-    if(!std::isspace(*i))
-    {
-      if(!std::isdigit(*i)) throw Incorrecto(DIGITOS);
-      tmp+=Cadena(1,*i);
-    }
-  }
-  if(tmp.length()< 13 || tmp.length() > 19) throw Incorrecto(LONGITUD);
-  if(!luhn(tmp))throw Incorrecto(NO_VALIDO);
-  number = tmp;*/
 }
 
 bool operator<(const Numero& A,const Numero& B)noexcept

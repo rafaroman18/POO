@@ -1,0 +1,79 @@
+In file included from test-caso1-consola.cpp:8:
+In file included from ./usuario.hpp:11:
+In file included from ./tarjeta.hpp:6:
+./usuario.cpp:9:1: error: use of undeclared identifier 'Clave'
+Clave::Clave(const char* contrasenna)
+^
+./usuario.cpp:22:15: error: use of undeclared identifier 'Clave'
+const Cadena& Clave::clave() const
+              ^
+./usuario.cpp:27:6: error: use of undeclared identifier 'Clave'
+bool Clave::verifica(const char* ppassword)
+     ^
+./usuario.cpp:34:1: error: use of undeclared identifier 'Usuario'
+Usuario::Usuarios Usuario::usuario_;
+^
+./usuario.cpp:34:19: error: use of undeclared identifier 'Usuario'
+Usuario::Usuarios Usuario::usuario_;
+                  ^
+./usuario.cpp:36:1: error: use of undeclared identifier 'Usuario'
+Usuario::Usuario(Cadena ID,Cadena NOM,Cadena APE,Cadena DIR,Clave CON)
+^
+./usuario.cpp:36:61: error: unknown type name 'Clave'
+Usuario::Usuario(Cadena ID,Cadena NOM,Cadena APE,Cadena DIR,Clave CON)
+                                                            ^
+./usuario.cpp:42:6: error: use of undeclared identifier 'Usuario'
+void Usuario::compra(Articulos& articulo,unsigned int cantidad)
+     ^
+./usuario.cpp:42:22: error: unknown type name 'Articulos'
+void Usuario::compra(Articulos& articulo,unsigned int cantidad)
+                     ^
+In file included from test-caso1-consola.cpp:8:
+In file included from ./usuario.hpp:11:
+./tarjeta.hpp:18:26: error: unknown type name 'Usuario'
+  Tarjeta(const Numero&, Usuario&);
+                         ^
+./tarjeta.hpp:22:9: error: unknown type name 'Usuario'
+  const Usuario* titular() const;
+        ^
+./tarjeta.hpp:25:9: error: unknown type name 'Usuario'
+  const Usuario* titular_;
+        ^
+./tarjeta.hpp:19:35: error: unknown type name 'Usuario'
+  void anula_titular(){const_cast<Usuario*&>(titular_)=nullptr;};
+                                  ^
+test-caso1-consola.cpp:17:24: error: no type named 'Incorrecto' in 'Numero'; did you mean 'Clave::Incorrecta'?
+void numero_incorrecto(Numero::Incorrecto);
+                       ^~~~~~~~~~~~~~~~~~
+                       Clave::Incorrecta
+./usuario.hpp:24:9: note: 'Clave::Incorrecta' declared here
+  class Incorrecta
+        ^
+test-caso1-consola.cpp:36:25: error: no type named 'Tipo' in 'Tarjeta'
+  using Tipo = Tarjeta::Tipo;
+               ~~~~~~~~~^
+test-caso1-consola.cpp:38:11: error: use of undeclared identifier 'Tipo'
+    visa1(Tipo::VISA, Numero("4539 4512 0398 7356"),
+          ^
+test-caso1-consola.cpp:38:23: error: no matching conversion for functional-style cast from 'const char [20]' to 'Numero'
+    visa1(Tipo::VISA, Numero("4539 4512 0398 7356"),
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./tarjeta.hpp:8:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [20]' to 'const Numero' for 1st argument
+class Numero
+      ^
+./tarjeta.hpp:8:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char [20]' to 'Numero' for 1st argument
+./tarjeta.hpp:8:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+test-caso1-consola.cpp:40:22: error: use of undeclared identifier 'Tipo'
+    american_express(Tipo::AmericanExpress, Numero("378282246310005"),
+                     ^
+test-caso1-consola.cpp:40:45: error: no matching conversion for functional-style cast from 'const char [16]' to 'Numero'
+    american_express(Tipo::AmericanExpress, Numero("378282246310005"),
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+./tarjeta.hpp:8:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [16]' to 'const Numero' for 1st argument
+class Numero
+      ^
+./tarjeta.hpp:8:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char [16]' to 'Numero' for 1st argument
+./tarjeta.hpp:8:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make: *** [test-caso1-consola.o] Error 1
