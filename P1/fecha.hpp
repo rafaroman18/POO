@@ -1,7 +1,7 @@
 #ifndef FECHA_HPP
 #define FECHA_HPP
-#include <cstring>
 #include <iostream>
+#include <ctime>
 static const int diames[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
 class Fecha
 {
@@ -13,6 +13,7 @@ class Fecha
   int anno() const noexcept;
   static const int AnnoMinimo = 1902;
   static const int AnnoMaximo = 2037;
+  Fecha& operator = (const Fecha&)=default;
   Fecha& operator += (int);
   Fecha& operator -=(int );
   Fecha operator + (int )const;

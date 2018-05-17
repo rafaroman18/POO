@@ -31,7 +31,7 @@ class Fecha
     const char* err_;
   };
   private:
-  int dia_,mes_,anno_;z
+  int dia_,mes_,anno_;
   void valida() const;
 };
 

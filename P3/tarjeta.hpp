@@ -1,10 +1,11 @@
 #ifndef TARJETA_HPP
 #define  TARJETA_HPP
 #include <ostream>
-#include "../P1/fecha.hpp"
-#include "../P1/cadena.hpp"
+#include <functional>
+#include "fecha.hpp"
+#include "cadena.hpp"
 #include "usuario.hpp"
-
+#define LAMBDA [](unsigned char X){return std::isspace(X);}
 //NUMERO
 class Numero
 {
@@ -12,9 +13,9 @@ public:
   enum Rzn {LONGITUD,DIGITOS,NO_VALIDO};
   Numero(Cadena num_);
   operator const char*()const noexcept{return number.c_str();}; //COMPROBAR
-  struct EsDigito : std::unary_function<const int&,bool>
+  struct EsDigito : public std::unary_function<const unsigned char,bool>
   {
-  bool operator() (const int& x) const {return std::isdigit(x);}
+  bool operator() (const unsigned char x) const {return std::isdigit(x);}
   };
   class Incorrecto
   {

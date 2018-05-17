@@ -1,8 +1,6 @@
-
-
-#include "fecha.hpp"
-#include <ctime>
+#include <cstdio>
 #include <iostream>
+#include "fecha.hpp"
 inline int Fecha::dia() const noexcept
 {return dia_;}
 
@@ -40,7 +38,7 @@ Fecha::Fecha(int dia,int mes,int anno):dia_(dia),mes_(mes),anno_(anno)
   valida();
 }
 
-Fecha::Fecha(const char* f)
+Fecha::Fecha(const char* f)//:dia_(-1),mes_(-1),anno_(-1)
 {
   if(sscanf(f,"%d/%d/%d",&dia_,&mes_,&anno_)!= 3 ) throw Invalida("Formato Invalido");
   if(dia_==0 || mes_==0 || anno_== 0)
@@ -122,22 +120,22 @@ Fecha Fecha::operator --(int )
 
 const char* Fecha::cadena()const
 {
-char* B=new char[50];
-std::tm* tiempo_descompuesto=new tm;
-*tiempo_descompuesto={0};
-tiempo_descompuesto->tm_mday=this->dia_;
-tiempo_descompuesto->tm_mon=this->mes_-1;
-tiempo_descompuesto->tm_year=this->anno_-1900;
-std::setlocale(LC_TIME, "es_ES.UTF-8");
-mktime(tiempo_descompuesto);
-strftime(B,50,"%A %d de %B de %Y",tiempo_descompuesto);
-return B;
+  static char B[50];
+  std::tm tiempo_descompuesto;
+  tiempo_descompuesto={0};
+  tiempo_descompuesto.tm_mday=this->dia_;
+  tiempo_descompuesto.tm_mon=this->mes_-1;
+  tiempo_descompuesto.tm_year=this->anno_-1900;
+  std::setlocale(LC_TIME, "es_ES.UTF-8");
+  mktime(&tiempo_descompuesto);
+  strftime(B,50,"%A %d de %B de %Y",&tiempo_descompuesto);
+  return (const char*)B;
 }
 
 //OPERADORES DE INSERCCION Y EXTRACCION
 std::istream &operator>>(std::istream& input,Fecha& A)
 {
- char* s=new char[11];
+ char s[11];
  input.getline(s,11);
  try
  {
@@ -148,7 +146,6 @@ std::istream &operator>>(std::istream& input,Fecha& A)
    input.setstate(std::ios_base::badbit);
    throw;
  }
- delete [] s;
  return input;
 }
 

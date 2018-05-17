@@ -1,20 +1,20 @@
 #ifndef PEDIDO_HPP
 #define PEDIDO_HPP
-#include "tarjeta.hpp"
-#include "../P1/fecha.cpp"
 #include <map>
 #include <set>
+#include "tarjeta.hpp"
+#include "fecha.hpp"
 class Usuario_Pedido;
 class Pedido_Articulo;
 class Pedido
 {
 public:
-  Pedido(Usuario_Pedido& usuario_pedidos,Pedido_Articulo& pedido_articulo,Usuario& u, const Tarjeta& t,const Fecha& fp);
+  Pedido(Usuario_Pedido& usuario_pedidos,Pedido_Articulo& pedido_articulo,Usuario& u, const Tarjeta& t,const Fecha& fp=Fecha());
   int numero() const{return num_;}
   Tarjeta const* tarjeta() const {return tarjeta_;}
   Fecha fecha() const {return fecha_;}
   double total() const {return total_;}
-  int n_total_pedidos() const {return N_pedidos;}
+  static int n_total_pedidos() {return N_pedidos;}
   //EXCEPCIONES
   class ExcepGener
   {
@@ -50,14 +50,8 @@ static int N_pedidos;
   double total_;
 };
 
-std::ostream& operator<<(std::ostream& os,Pedido P)
-{
-  os<<std::left<<std::setw(14)<<"Núm. pedido: "<<std::fixed<<P.numero()<<std::endl
-    <<std::left<<std::setw(14)<<"Fecha: "<<P.fecha()
-    <<std::left<<std::setw(14)<<"Pagado con: "<<P.tarjeta()
-    <<std::left<<std::setw(14)<<"Importe: "<<P.total();
-  return os;
-}
+std::ostream& operator<<(std::ostream& os,const Pedido& P);
+
 
 
 

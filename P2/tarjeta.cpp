@@ -2,18 +2,11 @@
 #include <cctype>
 #include <iomanip>
 #include <algorithm>
-#include <functional>
 bool luhn(const Cadena& numero);
-#define LAMBDA [](const char X){return std::isspace(X);}
+
 //NUMERO
 Numero::Numero(Cadena num)
 {
-  std::remove_if(num.begin(),num.end()+1,LAMBDA); //+1!!!!!!
-  if(num.length()< 13 || num.length() > 19) throw Incorrecto(LONGITUD);
-  if(std::find_if(num.begin(),num.end(),std::not1(EsDigito()))) throw Incorrecto(DIGITOS);
-  if(!luhn(num))throw Incorrecto(NO_VALIDO);
-  number = num;
-  /*      **P2**
   Cadena tmp;
   for(Cadena::iterator i=num.begin();i!=num.end();i++)
   {
@@ -25,7 +18,7 @@ Numero::Numero(Cadena num)
   }
   if(tmp.length()< 13 || tmp.length() > 19) throw Incorrecto(LONGITUD);
   if(!luhn(tmp))throw Incorrecto(NO_VALIDO);
-  number = tmp;*/
+  number = tmp;
 }
 
 bool operator<(const Numero& A,const Numero& B)noexcept

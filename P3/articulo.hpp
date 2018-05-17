@@ -1,8 +1,8 @@
 #ifndef ARTICULO_HPP
 #define ARTICULO_HPP
-#include "../P1/cadena.hpp"
-#include "../P1/fecha.hpp"
 #include <iomanip>
+#include "cadena.hpp"
+#include "fecha.hpp"
 class Articulo
 {
 public:

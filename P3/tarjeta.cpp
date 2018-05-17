@@ -1,16 +1,17 @@
-#include "tarjeta.hpp"
 #include <cctype>
 #include <iomanip>
 #include <algorithm>
 #include <functional>
+#include "tarjeta.hpp"
 bool luhn(const Cadena& numero);
-#define LAMBDA [](const char X){return std::isspace(X);}
 //NUMERO
 Numero::Numero(Cadena num)
 {
-  std::remove_if(num.begin(),num.end()+1,LAMBDA); //+1!!!!!!
+//RAFA
+  if(num.length()==0) throw Incorrecto(LONGITUD);
+  num=num.substr(0,std::remove_if(num.begin(),num.end(),LAMBDA)-num.begin()); //+1!!!!!!
   if(num.length()< 13 || num.length() > 19) throw Incorrecto(LONGITUD);
-  if(std::find_if(num.begin(),num.end(),std::not1(EsDigito()))) throw Incorrecto(DIGITOS);
+  if(std::find_if(num.begin(),num.end(),std::not1(EsDigito()))!=num.end()) throw Incorrecto(DIGITOS);
   if(!luhn(num))throw Incorrecto(NO_VALIDO);
   number = num;
 }

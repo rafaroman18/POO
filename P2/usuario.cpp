@@ -10,14 +10,16 @@ extern "C"{
 //CLAVE
 Clave::Clave(const char* contrasenna)
 {
-if(std::strlen(contrasenna)<5) throw Incorrecta(CORTA);
 static const char *const cv="abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXY0123456789./";
-std::random_device rng;
-std::uniform_int_distribution<std::size_t> dist(0,63);
-const char salt[]={cv[dist(rng)],cv[dist(rng)]};
-const char* const ptr=crypt(contrasenna,salt);
-if(!ptr) throw Incorrecta(ERROR_CRYPT);
-password = ptr;
+if(std::strlen(contrasenna)<5) throw Incorrecta(CORTA);
+static std::random_device rng;
+static std::uniform_int_distribution<std::size_t> dist(0,63);
+const char salt[] {cv[dist(rng)],cv[dist(rng)]};
+//const char* const ptr=crypt(contrasenna,salt);
+if(const char* const encrypt = crypt(contrasenna,salt)) password = encrypt;
+else throw Incorrecta(Razon::ERROR_CRYPT);
+/*if(!ptr) throw Incorrecta(ERROR_CRYPT);
+password = ptr;*/
 }
 
 inline const Cadena& Clave::clave() const

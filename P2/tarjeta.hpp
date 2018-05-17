@@ -4,6 +4,7 @@
 #include "../P1/fecha.hpp"
 #include "../P1/cadena.hpp"
 #include "usuario.hpp"
+
 //NUMERO
 class Numero
 {
@@ -11,10 +12,6 @@ public:
   enum Rzn {LONGITUD,DIGITOS,NO_VALIDO};
   Numero(Cadena num_);
   operator const char*()const noexcept{return number.c_str();}; //COMPROBAR
-  struct EsDigito
-  {
-    bool operator() (const int& x) const {return std::isdigit(x);}
-  };
   class Incorrecto
   {
   public:

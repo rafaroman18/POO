@@ -21,7 +21,6 @@ Pedido::Pedido(Usuario_Pedido& usuario_pedidos,
     Usuario::Articulos carro = u.compra(); //Se copia para poder realizar el bucle, ya que el erase jode los iteradores. Este solo se utiliza para leer
     for(auto c : carro)
     {
-
       Articulo* pa= c.first;
       unsigned int cantidad = c.second;
       double precio=pa->precio();
@@ -31,4 +30,13 @@ Pedido::Pedido(Usuario_Pedido& usuario_pedidos,
       u.compra(*pa,0);
     }
     usuario_pedidos.asocia(u,*this);
+}
+
+std::ostream& operator<<(std::ostream& os,const Pedido& P)
+{
+  os<<std::left<<std::setw(14)<<"Núm. pedido: "<<std::fixed<<P.numero()<<std::endl
+    <<std::left<<std::setw(14)<<"Fecha: "<<P.fecha()
+    <<std::left<<std::setw(14)<<"Pagado con: "<<P.tarjeta()
+    <<std::left<<std::setw(14)<<"Importe: "<<P.total();
+  return os;
 }

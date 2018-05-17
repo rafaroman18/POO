@@ -5,7 +5,7 @@
 #include <map>
 #include <cstdlib>
 #include <ctime>
-#include "../P1/cadena.hpp"
+#include "cadena.hpp"
 #include "tarjeta.hpp"
 #include "articulo.hpp"
 class Numero;
