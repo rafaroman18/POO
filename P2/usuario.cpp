@@ -10,16 +10,15 @@ extern "C"{
 //CLAVE
 Clave::Clave(const char* contrasenna)
 {
-static const char *const cv="abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXY0123456789./";
-if(std::strlen(contrasenna)<5) throw Incorrecta(CORTA);
-static std::random_device rng;
-static std::uniform_int_distribution<std::size_t> dist(0,63);
-const char salt[] {cv[dist(rng)],cv[dist(rng)]};
-//const char* const ptr=crypt(contrasenna,salt);
-if(const char* const encrypt = crypt(contrasenna,salt)) password = encrypt;
-else throw Incorrecta(Razon::ERROR_CRYPT);
-/*if(!ptr) throw Incorrecta(ERROR_CRYPT);
-password = ptr;*/
+  static const char* const letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./";
+	if(strlen(contrasenna)< 5) throw Incorrecta(Clave::CORTA);
+	static std::random_device rd;
+	static std::uniform_int_distribution<std::size_t> dis(0,63);
+
+	const char salt[] {letras[dis(rd)],letras[dis(rd)]};
+	if(const char* const encrypt = crypt(contrasenna,salt)) password = encrypt;
+  else throw Incorrecta(Razon::ERROR_CRYPT);
+
 }
 
 inline const Cadena& Clave::clave() const
@@ -29,9 +28,10 @@ inline const Cadena& Clave::clave() const
 
 bool Clave::verifica(const char* ppassword) const
 {
-  const char*const pcc=crypt(ppassword,password.c_str());
-  if(!pcc) throw Incorrecta(ERROR_CRYPT);
+
+  if(const char*const pcc=crypt(ppassword,password.c_str()))
   return password==pcc;
+  throw Incorrecta(ERROR_CRYPT);
 }
 
 Usuario::Usuarios Usuario::usuario_;

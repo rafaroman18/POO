@@ -33,7 +33,7 @@ Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& A)
 
 std::ostream& operator<<(std::ostream& os,const LineaPedido& L)
 {
-  os<<std::setprecision(2)<<L.precio_venta()<<" €\t"<<L.cantidad();
+  os<<std::fixed<<std::setprecision(2)<<L.precio_venta()<<" €\t"<<L.cantidad();
   return os;
 };
 
@@ -64,12 +64,12 @@ std::ostream& operator<<(std::ostream& os,const Pedido_Articulo::Pedidos& P)
 
   for(auto w : P)
     {
-  os<<w.second<<"           "<<w.first->fecha()<<std::endl;
-  total=total+w.second.cantidad()*w.second.precio_venta();
-  contador=contador+w.second.cantidad();
+  os<<w.second<<"\t\t"<<w.first->fecha()<<std::endl;
+  total+=w.second.cantidad()*w.second.precio_venta();
+  contador+=w.second.cantidad();
     };
-  os<<"================================================="<<std::endl<<std::setprecision(2)<<std::fixed
-  <<total<<"      "<<contador<<std::endl;
+  os<<"================================================="<<std::endl<<std::fixed<<std::setprecision(2)<<std::fixed
+  <<total<<" €\t\t"<<contador<<std::endl<<std::endl;
   return os;
 }
 
@@ -81,10 +81,10 @@ std::ostream& Pedido_Articulo::mostrarDetallePedidos(std::ostream& os)
     os<<"Pedido núm. "<<c.first->numero()<<std::endl;
     os<<"Cliente: "<<c.first->tarjeta()->titular()->nombre()<<"      "
              <<"Fecha: "<<c.first->fecha()<<std::endl;
-    os<<c.second;
+    os<<c.second<<std::endl;
     total+=c.first->total();
   }
-  os<<std::endl<<"TOTAL VENTAS      "<<total<<std::endl;
+  os<<std::endl<<"TOTAL VENTAS      "<<std::fixed<<std::setprecision(2)<<total<<" €"<<std::endl<<std::endl;
   return os;
 }
 

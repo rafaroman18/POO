@@ -30,13 +30,14 @@ Pedido::Pedido(Usuario_Pedido& usuario_pedidos,
       u.compra(*pa,0);
     }
     usuario_pedidos.asocia(u,*this);
+    ++N_pedidos;
 }
 
 std::ostream& operator<<(std::ostream& os,const Pedido& P)
 {
-  os<<std::left<<std::setw(14)<<"Núm. pedido: "<<std::fixed<<P.numero()<<std::endl
-    <<std::left<<std::setw(14)<<"Fecha: "<<P.fecha()
-    <<std::left<<std::setw(14)<<"Pagado con: "<<P.tarjeta()
-    <<std::left<<std::setw(14)<<"Importe: "<<P.total();
+  os<<std::left<<std::setw(14)<<"Núm. pedido:  "<<P.numero()<<std::endl
+    <<std::left<<std::setw(14)<<"Fecha: "<<P.fecha()<<std::endl
+    <<std::left<<std::setw(14)<<"Pagado con: "<<P.tarjeta()->tipo()<<" n.º: "<<P.tarjeta()->numero()<<std::endl
+    <<std::left<<std::setw(14)<<"Importe: "<<std::fixed<<std::setprecision(2)<<P.total()<<" €"<<std::endl;
   return os;
 }
