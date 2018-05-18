@@ -1,3 +1,5 @@
+#ifndef PEDIDO_ARTICULO_HPP
+#define PEDIDO_ARTICULO_HPP
 #include "pedido.hpp"
 class LineaPedido
 {
@@ -40,3 +42,5 @@ private:
 };
 std::ostream& operator<<(std::ostream& os,const Pedido_Articulo::ItemsPedido& Items);
 std::ostream& operator<<(std::ostream& os,const Pedido_Articulo::Pedidos& P);
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef USUARIO_PEDIDO_HPP
+#define USUARIO_PEDIDO_HPP
 #include <set>
 #include <map>
 #include "pedido.hpp"
@@ -20,3 +22,5 @@ private:
   std::map<Usuario*,Pedidos> Usuario_Pedidos_;//Diccionario punteros a Usuario y Pedido
   std::map<Pedido*,Usuario*> Pedido_Usuario_;//Diccionario punteros a Pedido y Usuario
 };
+
+#endif
