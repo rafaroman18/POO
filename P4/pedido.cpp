@@ -12,23 +12,37 @@ Pedido::Pedido(Usuario_Pedido& usuario_pedidos,
   if(u.n_articulos()==0) throw Vacio(u); //¿Carrito vacío?
   if(t.titular() != &u) throw Impostor(u);
   if(t.caducidad()<fp) throw Tarjeta::Caducada(t.caducidad()); //Tarjeta caducada
-  for(auto c: u.compra()) // c es pair<Articulo*,unsigned> (cantidad)
-    if(c.first->stock() < c.second)
-    {
-      const_cast<Usuario::Articulos&>(u.compra()).clear();//Como compra devuelve un metodo const, hace falta un conversor a no const
-      throw SinStock(*c.first);
-    }//No hay bastante en el armarsén
-    Usuario::Articulos carro = u.compra(); //Se copia para poder realizar el bucle, ya que el erase anula los iteradores. Este solo se utiliza para leer
+  Usuario::Articulos carro = u.compra(); //Se copia para poder realizar el bucle, ya que el erase anula los iteradores. Este solo se utiliza para leer
+  bool pedido_final_vacio=true;
     for(auto c : carro)
     {
       Articulo* pa= c.first;
       unsigned int cantidad = c.second;
+      if(ArticuloAlmacenable* const aa=dynamic_cast<ArticuloAlmacenable* const>(pa))
+      {
+        if(aa->stock()<cantidad)
+          {
+          const_cast<Usuario::Articulos&>(u.compra()).clear();//Como compra devuelve un metodo const, hace falta un conversor a no const
+          throw SinStock(*c.first);
+          }//No hay bastante en el armarsén
       double precio=pa->precio();
-      pa->stock() -= cantidad;
-      pedido_articulo.pedir(*this, *pa, precio, cantidad);
+      aa->stock() -= cantidad;
       total_ += precio * cantidad;
-      u.compra(*pa,0);
+      pedido_articulo.pedir(*this, *aa, precio, cantidad);
+      pedido_final_vacio=false;
+      }
+      else
+        if(LibroDigital* const ld=dynamic_cast<LibroDigital* const>(pa)){
+            if(ld->f_expir() > fp) {
+              total_ += ld->precio() * cantidad;
+              pedido_articulo.pedir(*this,*ld,ld->precio(),cantidad);
+              pedido_final_vacio=false;
+            }
+      }
+      else throw std::logic_error("Pedido::Pedido error, tipo de Articulo desconocido");
+      u.compra(*(c.first),0);
     }
+    if(pedido_final_vacio){throw Vacio(u);}
     usuario_pedidos.asocia(u,*this);
     ++N_pedidos;
 }

@@ -7,6 +7,7 @@ bool luhn(const Cadena& numero);
 //NUMERO
 Numero::Numero(Cadena num)
 {
+
   Cadena tmp;
   for(Cadena::iterator i=num.begin();i!=num.end();i++)
   {

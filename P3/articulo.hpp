@@ -1,7 +1,7 @@
 #ifndef ARTICULO_HPP
 #define ARTICULO_HPP
 #include <iomanip>
-#include "cadena.hpp"
+#include "../P1/cadena.hpp"
 #include "fecha.hpp"
 class Articulo
 {
